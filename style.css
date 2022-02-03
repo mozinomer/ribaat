@@ -926,7 +926,7 @@ a.nxt {
     font-family: 'Abhaya Libre', serif;
     font-size: 40px;
 }
-button.default-btn1:hover {
+a.default-btn1:hover {
     background: #cb9e2a;
     color: #fff;
 }
@@ -1674,7 +1674,7 @@ section.products-tabing.tabing-bottom {
     border: 1px solid #cb9e2a;
     border-radius: 5px;
 }
-.crta-w1 button.default-btn1:hover {
+.crta-w1 a.default-btn1:hover {
     background:transparent;
     color: #cb9e2a;
 }
@@ -2082,7 +2082,7 @@ p.colours {
     border: 1px solid #cb9e2a;
     border-radius: 5px;
 }
-button.default-btn1:hover {
+a.default-btn1:hover {
     background:transparent;
     color: #cb9e2a;
 }
@@ -2187,7 +2187,7 @@ section.shop-exclusive.padding-main {
 section.insta-home.padding-main {
     padding: 40px 0;
 }
-.picks-img button.default-btn1:hover {
+.picks-img a.default-btn1:hover {
     background: #cb9e2a;
     color: #fff;
 }

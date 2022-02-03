@@ -2,45 +2,22 @@
 /* 
 	Template Name: Home Page Template 
 */
-
-get_header(); ?>
-
-
+    get_header(); ?>
     <section class="home-gifts padding-main">
         <div class="container">
             <div class="gift-flex">
-                <div class="width-gift">
-                    <div class="gift-img">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/rose.png">
-                        <h3>REAL ROSES</h3>
+                <?php if( have_rows('home_first_column') ): while( have_rows('home_first_column') ) : the_row(); ?>
+                    <div class="width-gift">
+                        <div class="gift-img">
+                            <img src="<?php echo the_sub_field('icon_row_1'); ?>">
+                            <h3><?php echo the_sub_field('heading_column'); ?></h3>
+                        </div>
+                        <div class="gift-para">
+                            <p><?php echo the_sub_field('content_column'); ?></p>
+                        </div>
                     </div>
-                    <div class="gift-para">
-                        <p>We preserve real roses at the peak of their natural freshness to capture their beauty for 12+ months
-                        </p>
-                    </div>
-                </div>
-                <div class="width-gift">
-                    <div class="gift-img">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/Box.png">
-                        <h3>AUTHENTIC LUXURY</h3>
-                    </div>
-                    <div class="gift-para">
-                        <p>Our arrangements are showcased in luxurious boxes that have been handcrafted by gifted artisans
-                        </p>
-                    </div>
-                </div>
-                <div class="width-gift">
-                    <div class="gift-img">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/shipping.png">
-                        <h3>EASY DELIVERY</h3>
-                    </div>
-                    <div class="gift-para">
-                        <p>We provide FREE shipping in the U.S. and offer same-day delivery on orders placed before 12 PM PST
-                        </p>
-                    </div>
-                </div>
+                <?php endwhile; else : endif; ?>
             </div>
-
         </div>
     </section>
     <section class="home-shop padding-main">
@@ -124,10 +101,10 @@ get_header(); ?>
     <section class="glam-home padding-main">
         <div class="container">
             <div class="glam-main">
-                <h1>The Ribaat Clothing Secret</h1>
-                <p>We believe in sharing only the best nature has to offer. All of our roses are handpicked in lush Ecuadorian fields to ensure each bloom is of the highest quality. And our proprietary, non-toxic preservation process allows you to enjoy the beauty and vibrancy of our bouquets for 12+ months</p>
+                <h1><?php echo the_field('secret_heading'); ?></h1>
+                <p><?php echo the_field('secret_content'); ?></p>
                 <div class="learn-btn">
-                    <a href="#" class="learn">Learn more</a>
+                    <a href="<?php echo the_field('secret_link'); ?>" class="learn">Learn more</a>
                 </div>
                 <div class="inside-img">
                     <img src="<?php echo get_template_directory_uri(); ?>/images/genuine roses.png">
@@ -179,68 +156,18 @@ get_header(); ?>
         <div class="container">
             <h2>What Our Customers Say</h2>
             <div class="owl-carousel home-slider owl-theme">
-                <div class="item">
-                    <div class="in-shape">
-                        <div class="inner-slider">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/Srars.png">
-                            <p>I just want to say 'Thanks' for not only the great service, the great easy to use website but also for the awesome quality of your products and the quality of product your partners in areas outside of Austin.</p>
-                            <span>May 20, 2020<br>
-                            Sandra F. </span>
+                <?php if( have_rows('customer_testimonials', 'option') ): while( have_rows('customer_testimonials', 'option') ) : the_row(); ?>
+                    <div class="item">
+                        <div class="in-shape">
+                            <div class="inner-slider">
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/Srars.png">
+                                <p><?php the_sub_field('customers_saying', 'option'); ?></p>
+                                <span><?php the_sub_field('customer_date', 'option'); ?><br>
+                                <?php the_sub_field('customer_name', 'option'); ?></span>
+                            </div>
                         </div>
                     </div>
-
-                </div>
-                <div class="item">
-                    <div class="in-shape">
-                        <div class="inner-slider">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/Srars.png">
-                            <p>Love the new web site and the feeling of being a part of the Ribaat Clothing family. I have been a customer for years and you are above all the other florists out there. I never have to worry or be concerned if I will be satisfied always have been.</p>
-                            <span>April 7, 2020<br>
-                            Wilde J.</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="in-shape">
-                        <div class="inner-slider">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/Srars.png">
-                            <p>I want to thank you for the spray that y'all did for my brother's services. I was beautiful and just what we had in mind when I placed the order by phone. The person taking the order (sorry, I can't remember her name) was very nice and accommodating. Good job!</p>
-                            <span>April 2, 2020<br>
-                            Tom G. </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="in-shape">
-                        <div class="inner-slider">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/Srars.png">
-                            <p>I just want to say 'Thanks' for not only the great service, the great easy to use website but also for the awesome quality of your products and the quality of product your partners in areas outside of Austin.</p>
-                            <span>May 20, 2020<br>
-                            Sandra F. </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="in-shape">
-                        <div class="inner-slider">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/Srars.png">
-                            <p>I just want to say 'Thanks' for not only the great service, the great easy to use website but also for the awesome quality of your products and the quality of product your partners in areas outside of Austin.</p>
-                            <span>May 20, 2020<br>
-                            Sandra F. </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="in-shape">
-                        <div class="inner-slider">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/Srars.png">
-                            <p>I just want to say 'Thanks' for not only the great service, the great easy to use website but also for the awesome quality of your products and the quality of product your partners in areas outside of Austin.</p>
-                            <span>May 20, 2020<br>
-                            Sandra F. </span>
-                        </div>
-                    </div>
-                </div>
-
+                <?php endwhile; else : endif; ?>
             </div>
         </div>
     </section>
@@ -307,4 +234,4 @@ get_header(); ?>
         </div> 
     </div>
 
-<?php get_footer(); ?>
+    <?php get_footer(); ?>
