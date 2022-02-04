@@ -171,15 +171,6 @@
             </div>
         </div>
     </section>
-    <section class="insta-home">
-        <div class="container">
-            <div class="iner-insta">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/crown.png">
-                <h2>Shop Our Instagram</h2>
-                <p>@Ribaat ClothingOfficial</p>
-            </div>
-        </div>
-    </section>
     <div class="home-popup">
         <div id="myModal22" class="modal fade">
             <div class="modal-dialog">
