@@ -99,39 +99,20 @@
                         <span></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                        <ul class="navbar-nav ">
+                        <!-- <ul class="navbar-nav">
                             <div class="mobile-li">
                                 <ul>
                                     <li><a href="support.html">Account</a></li>
                                 </ul>
                             </div>
-                            <li>
-                                <a href="shop-all.html">Shop All</a>
-                            </li>
-                            <li>
-                                <a href="design-own.html">Design Your Own</a>
-                            </li>
-                            <li>
-                                <a href="shop-exclusive.html">Shop Exclusives</a>
-                            </li>
-                            <li class="has-children">
-                                <a href="shop-occasion.html">Shop Occasions</a>
-                                <ul class="sub-menu" id="submenu">
-                                    <li>
-                                        <a href="sale.html" class="anchortextsubmenu">
-                                            Sale
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="sale.html" class="anchortextsubmenu1">
-                                    Sale
-                                </a>
-                            </li>
-                            <li>
-                                <a href="gf-secret.html">The Ribaat Clothing Secret</a>
-                            </li>
+                        </ul> -->
+                            <?php 
+                            wp_nav_menu(array( 
+                                'theme_location' => 'header-menu', 
+                                // 'container_class' => 'navbar-nav' ,
+                                'menu_class' => 'navbar-nav'
+                            ));
+                            ?>
                             <div class="mobile-li" id="mob-li">
                                 <ul>
                                     <li><a href="support.html">Support</a></li>

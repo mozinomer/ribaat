@@ -3619,3 +3619,6 @@ section.home-banner {
     object-fit: cover;
     max-height: 400px;
 }
+.menu-header-menu-container {
+    width: 100%;
+}
