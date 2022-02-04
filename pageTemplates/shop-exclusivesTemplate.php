@@ -31,18 +31,17 @@
                 
                 <div class="pick-width">
                     <div class="picks-img">
-                        <?php if( has_post_thumbnail() ) { ?>
+                        <!-- <?php if( has_post_thumbnail() ) { ?>
                             <img src="<?php echo get_the_post_thumbnail_url(); ?>">
                         <?php } else { ?>
                             <img src="images/picks1.png">
-                        } ?>
-                        <h3><?php the_title(); ?></h3>
-                        <p>From $269</p>
-                        <a class="default-btn1" href="<?php the_permalink(); ?>">SHOP NOW</a>
+                        } ?> -->
+                         <!-- <h3><?php the_title(); ?></h3> -->
+                        <!-- <p>From $269</p> -->
+                        <!-- <a class="default-btn1" href="<?php the_permalink(); ?>">SHOP NOW</a> -->
                     </div>
                 </div>
-                <?php 
-            endwhile; wp_reset_postdata();  
+                <?php endwhile; wp_reset_postdata();  
             ?>
         </div>
         <div class="view-all" id="mobile-pad">
