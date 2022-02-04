@@ -345,6 +345,9 @@ input[type=number]::-webkit-outer-spin-button {
 
 .inner-shop img {
     width: 100%;
+    min-height: 400px;
+    object-fit: cover;
+    max-height: 400px;
 }
 .inner-shop {
     text-align: center;
@@ -451,6 +454,9 @@ label.image-checkbox:last-child {
     max-width: 80%;
     margin: 0 auto;
     display: block;
+    padding: 40px;
+    max-height: 400px;
+    object-fit: contain;
 }
 .picks-img p {
     margin: 15px 0;

@@ -1,4 +1,13 @@
 
+<section class="insta-home padding-main">
+    <div class="container">
+        <div class="iner-insta">
+            <img src="<?php echo get_template_directory_uri(); ?>/images/crown.png">
+            <h2>Shop Our Instagram</h2>
+            <p>@Ribaat ClothingOfficial</p>
+        </div>
+    </div>
+</section>
 
 <footer class="main-footer">
 	<div class="container">
@@ -42,10 +51,10 @@
 					<p id="border-none-mobile">Let’s Stay In Touch</p>
 					<div class="social" id="mobile-social">
 						<ul>
-							<li><a href="#"><img src="images/fb.png"></a></li>
-							<li><a href="#"><img src="images/insta.png"></a></li>
-							<li><a href="#"><img src="images/youtube.png"></a></li>
-							<li><a href="#"><img src="images/pin-trest.png"></a></li>
+							<li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/fb.png"></a></li>
+							<li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/insta.png"></a></li>
+							<li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/youtube.png"></a></li>
+							<li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/pin-trest.png"></a></li>
 						</ul>
 					</div>
 				</div>
@@ -58,7 +67,7 @@
 						<form>
 							<div class="form-fo">
 								<input type="email" placeholder="Enter your email">
-								<button type="submit" class="plane"><img src="images/em.png"></button>
+								<button type="submit" class="plane"><img src="<?php echo get_template_directory_uri(); ?>/images/em.png"></button>
 
 							</div>
 						</form>
