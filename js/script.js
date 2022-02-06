@@ -1,5 +1,7 @@
+
 $(function () {
     "use strict";
+
 
     /*------ MENU Fixed ------*/
     $(window).scroll(function () {
@@ -14,47 +16,51 @@ $(function () {
             $header.removeClass("bar-color");
         }
     });
-$('.hamburger').click(function(){
-$(this).toggleClass('active');
+    $('.hamburger').click(function(){
+        $(this).toggleClass('active');
 
 
-});
-$('.home-slider').owlCarousel({
-    loop:true,
-    margin:20,
-    items:3,
-    dots:false,
-    arrow:true,
-    nav:true,
-    navText: ["<img src='images/left.png'>","<img src='images/right.png'>"],
-    responsive:{
-        0:{
-            items:1
-        },
-        900:{
-            items:3
-        },
- 
-    }
-});
-
-
-$(document).ready(function() {
-    $('.minus').click(function () {
-        var $input = $(this).parent().find('input');
-        var count = parseInt($input.val()) - 1;
-        count = count < 1 ? 1 : count;
-        $input.val(count);
-        $input.change();
-        return false;
     });
-    $('.plus').click(function () {
-        var $input = $(this).parent().find('input');
-        $input.val(parseInt($input.val()) + 1);
-        $input.change();
-        return false;
+    $('.home-slider').owlCarousel({
+        loop:true,
+        margin:20,
+        items:3,
+        dots:false,
+        arrow:true,
+        nav:true,
+        navText: ["<img src='images/left.png'>","<img src='images/right.png'>"],
+        responsive:{
+            0:{
+                items:1
+            },
+            900:{
+                items:3
+            },
+
+        }
     });
-});
+
+
+    $(document).ready(function() {
+        $('.minus').click(function () {
+            var $input = $(this).parent().find('input');
+            var count = parseInt($input.val()) - 1;
+            count = count < 1 ? 1 : count;
+            $input.val(count);
+            $input.change();
+            return false;
+        });
+        $('.plus').click(function () {
+            var $input = $(this).parent().find('input');
+            $input.val(parseInt($input.val()) + 1);
+            $input.change();
+            return false;
+        });
+        $('.imageWrapperS').slick({
+            slidesToShow: 1,
+            arrow: true,
+        })
+    });
 // Faqs Page JS //
 $(".faq h6").click(function (e) {
     e.preventDefault();
@@ -66,13 +72,13 @@ $(".faq h6").click(function (e) {
 
 $('.def1').click(function (e){
     e.preventDefault();
-   $('.add-to-cart').addClass("active");
-   $('body').addClass("color");
+    $('.add-to-cart').addClass("active");
+    $('body').addClass("color");
 
 });
 $('.hide-right').click(function(){
-$('.add-to-cart').removeClass("active");
-$('body').removeClass("color");
+    $('.add-to-cart').removeClass("active");
+    $('body').removeClass("color");
 });
 $('.hide-card').click(function(){
     $('.frm-show').slideToggle();
@@ -81,15 +87,15 @@ $('.hide-card').click(function(){
 })
 });
 $('.expnd-btn').click(function(){
-   $('.fleur-exper').slideDown();
-   $(this).css({'visibility':'hidden' , 'transition': 'all .4s ease-in-out' , 'opacity': '0'});
+ $('.fleur-exper').slideDown();
+ $(this).css({'visibility':'hidden' , 'transition': 'all .4s ease-in-out' , 'opacity': '0'});
  
 
 });
 $('.reduce-btn').click(function(){
     $('.fleur-exper').slideUp();
     $('.expnd-btn').css({'visibility':'visible' , 'transition': 'all .4s ease-in-out' , 'opacity': '1'});
- 
+
 })
 if($(window).width() > 767 ){
     $('#open-pop').click(function(){
@@ -111,9 +117,9 @@ if($(window).width() < 767 ) {
         $(this).parent().find('.sub-menu').slideToggle('slow');
     });
     // Home Page Load Pop-up JS //
-$(document).ready(function(){
-    $("#myModal22").modal('show');
-});
+    $(document).ready(function(){
+        $("#myModal22").modal('show');
+    });
 
 // Home Page Load Pop-up JS End //
 }
@@ -123,5 +129,4 @@ $('.containercontentWithHeading').click( function (e) {
     $(this).toggleClass('active');
     $(this).find('p').slideToggle();
 })
-
 

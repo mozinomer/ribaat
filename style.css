@@ -1573,9 +1573,9 @@ section.shop-exclusive.padding-main .shop-width-all1 {
         filter: invert(1) brightness(0);
     }
     .chq-im1 label.image-checkbox img:hover{
-       filter: none;
-   }
-   .chq-im1 .image-checkbox input:checked ~ .lala img{
+     filter: none;
+ }
+ .chq-im1 .image-checkbox input:checked ~ .lala img{
     border:none;
     border-radius: none;
     filter: none;
@@ -2011,10 +2011,10 @@ section.shop-exclusive.padding-main .shop-width-all1 {
         margin: 20px 0;
     }
     .greeting.frm-hide p{
-       visibility: hidden;
+     visibility: hidden;
 
-   }
-   .delivery-flex {
+ }
+ .delivery-flex {
     display: flex;
     justify-content: space-between;
 }
@@ -2123,7 +2123,7 @@ a.default-btn1:hover {
     margin: 30px 0px;
 }
 .main-ac-blnk .ac-width {
-   border: none;
+ border: none;
 }
 .main-ac-blnk .ac-width1 {
     border: none;
@@ -3627,4 +3627,197 @@ section.home-banner {
     max-height: 300px;
     height: 300px;
     object-fit: cover;
+}
+a.button.product_type_simple.add_to_cart_button.ajax_add_to_cart {
+    background: transparent;
+    padding: 7px 100px;
+    text-transform: capitalize;
+    border-style: none;
+    display: inline-block;
+    color: #cb9e2a;
+    margin-top: 0px !important;
+    border: 1px solid #cb9e2a;
+    border-radius: 5px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+a.button.product_type_simple.add_to_cart_button.ajax_add_to_cart:hover {
+    background: #cb9e2a;
+    color: #fff;
+}
+
+span.price {
+    margin: 15px 0;
+    color: #cb9e2a;
+    text-align: center;
+}
+
+span.price span {
+    color: #cb9e2a;
+}
+
+h2.woocommerce-loop-product__title {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 17px !important;
+    font-family: 'Montserrat', sans-serif;
+    padding: 0px !important;
+}
+
+.woocommerce-page ul.products li.product img {
+    max-height: 300px;
+    height: 300px;
+    min-height: 300px;
+    object-fit: cover;
+}
+ul.page-numbers li a {
+    color: black;
+    float: left;
+    padding: 8px 19px !important;
+    text-decoration: none;
+    transition: background-color .3s;
+    width: 40px;
+    height: 40px;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+    border-radius: 50%;
+    margin-left: 10px !important;
+}
+
+ul.page-numbers li span {
+    background-color: #cb9e2a !important;
+    color: white !important;
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    color: #fff;
+}
+
+span.page-numbers.current {
+    /* border: none !important; */
+}
+
+.woocommerce nav.woocommerce-pagination ul {
+    border: none !important;
+}
+
+.woocommerce .woocommerce-pagination ul.page-numbers li, .woocommerce-page .woocommerce-pagination ul.page-numbers li {
+    border: none;
+}
+
+.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border: 2px solid red;
+    background: transparent;
+    padding: 7px 100px !important;
+    text-transform: capitalize !important;
+    border-style: none;
+    /* display: inline-block; */
+    color: #cb9e2a;
+    margin-top: 0px !important;
+    border: 1px solid #cb9e2a;
+    border-radius: 5px;
+    padding: 10px 20px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+    text-transform: uppercase !important;
+    margin: 20px 0px 0px !important;
+}
+
+.woocommerce.columns-4 {
+    padding: 100px 0px;
+}
+
+.woocommerce .woocommerce-ordering select {
+    padding: 10px;
+    border: 2px solid #cb9e2a;
+    font-size: 14px;
+    color: #cb9e2a;
+}
+
+.woocommerce .woocommerce-result-count {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+}
+.imageWrapperS .slick-arrow {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 50px;
+    margin: auto;
+    font-size: 0;
+    width: 50px;
+    background: none;
+    border: 2px solid #cb9e2a;
+    display: none !important;
+    z-index: 9;
+}
+
+.imageWrapperS .slick-next {
+    right: 0;
+}
+
+.imageWrapperS {}
+
+.imageWrapperS .slick-arrow::after {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    border: 4px solid #cb9e2a;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    transform: rotate(45deg);
+}
+
+.imageWrapperS .slick-next:after {
+    border-left: 0;
+    border-bottom: 0;
+}
+
+.imageWrapperS .slick-prev:after {
+    border-right: 0;
+    border-top: 0;
+}
+
+.imageWrapperS .slick-arrow:hover {background: #cb9e2a;}
+
+.imageWrapperS .slick-arrow:hover:after {
+    border-color: white;
+}
+
+.imageWrapperS:hover .slick-arrow {
+    display: block !important;
+}
+.imageWrapperS .slick-prev {
+    left: 0;
+}
+.woocommerce img, .woocommerce-page img {
+    padding: 0px;
+}
+.productContainershop {
+    margin-bottom: 40px;
 }

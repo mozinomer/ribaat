@@ -91,10 +91,10 @@
 <script src="<?php echo get_template_directory_uri(); ?>/js/bootstrap.min.js"></script>
 <!-- owl slider -->
 <script src="<?php echo get_template_directory_uri(); ?>/js/owl.carousel.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <!-- custom js -->
 
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/script.js"></script>
-
 <?php wp_footer(); ?>
 </body>
 </html>
