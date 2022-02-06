@@ -18,7 +18,9 @@ function wpb_custom_new_menu() {
   register_nav_menus(
     array(
       'header-menu' => __( 'Header Menu' ),
-      'extra-menu' => __( 'Extra Menu' )
+      'extra-menu' => __( 'Extra Menu' ),
+      'customer-service' => __( 'Customer Service' ),
+      'discover-menu' => __( 'Discvoer' )
     )
   );
 }

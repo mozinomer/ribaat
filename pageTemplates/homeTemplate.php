@@ -23,78 +23,30 @@
     <section class="home-shop padding-main">
         <div class="container">
             <div class="shop-flex">
-                <div class="shop-width">
-                    <div class="inner-shop">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/product1.png">
-                        <div class="lock">
+                <?php $termchildren = get_terms( 'product_cat',  array('parent' => 0) );?>
+                <?php foreach($termchildren as $category) {  $term_link = get_term_link( $category ); $featuredCat =  get_field('show_this_category_on_homepage', 'product_cat_'.$category->term_id); 
+                if($featuredCat == 'Yes') { ?>
+                    <div class="shop-width featuredCats">
+                        <div class="inner-shop">
+                            <?php $catImage = get_field('image_cat', 'product_cat_'.$category->term_id); 
+                            if($catImage) { ?>
+                                <img src="<?php the_field('image_cat', 'product_cat_'.$category->term_id); ?>">
+                            <?php } else { ?>
+                               <img src="<?php echo get_template_directory_uri(); ?>/images/rep.jpeg">
+                           <?php } ?>
+                           <div class="lock">
                             <img src="<?php echo get_template_directory_uri(); ?>/images/lock.png">
                         </div>
-                        <h2>Exclusives</h2>
-                        <p>Exclusive flower bouquets and arrangements for any occasion</p>
-                        <span>From $99</span>
-                        <div class="adad">
-                            <a href="#" class="default-btn1">SHOP NOW</a>
-                        </div>
-
-                    </div>
-
-                </div>
-                <div class="shop-width">
-                    <div class="inner-shop">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/product2.png">
-                        <div class="lock">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/lock.png">
-                        </div>
-                        <h2>Design Your Own</h2>
-                        <div class="mn-flower">
-                            <div class="uper all-dta">
-                                <label class="image-checkbox" title="Yellow">
-                                    <input type="radio" name="team[]">
-                                    <span class="lala"><img src="<?php echo get_template_directory_uri(); ?>/images/yellow-mellow 1.png"></span>
-                                </label>
-                                <label class="image-checkbox" title="Light Pink">
-                                    <input type="radio" name="team[]">
-                                    <span class="lala"><img src="<?php echo get_template_directory_uri(); ?>/images/pink-duchess 1.png"></span>
-                                </label>
-                                <label class="image-checkbox" title="Dark Pink">
-                                    <input type="radio" name="team[]">
-                                    <span class="lala"><img src="<?php echo get_template_directory_uri(); ?>/images/glamour-fuschia 1.png"></span>
-                                </label>
-                                <label class="image-checkbox" title="Off White">
-                                    <input type="radio" name="team[]">
-                                    <span class="lala"><img src="<?php echo get_template_directory_uri(); ?>/images/blue-ocean 1.png"></span>
-                                </label>
-                                <label class="image-checkbox" title="Red">
-                                    <input type="radio" name="team[]">
-                                    <span class="lala"><img src="<?php echo get_template_directory_uri(); ?>/images/brown-cognac 1.png"></span>
-                                </label>
+                        <h2><?php echo $category->name; ?></h2>
+                        <p> 
+                            <?php echo category_description($category->term_id); ?></p>
+                            <span>From $99</span>
+                            <div class="adad">
+                                <a href="<?php echo $term_link; ?>" class="default-btn1">SHOP NOW</a>
                             </div>
                         </div>
-                        <span class="colours">+10 more colors</span>
-                        <span>From $139</span>
-                        <div class="adad">
-                            <a href="#" class="default-btn1">DESIGN THE BOX</a>
-                        </div>
-
                     </div>
-
-
-                </div>
-                <div class="shop-width">
-                    <div class="inner-shop">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/product3.png">
-                        <h2>Occasions</h2>
-                        <div class="lock">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/lock.png">
-                        </div>
-                        <p>Exclusive flower bouquets and arrangements for any occasion</p>
-                        <span>From $139</span>
-                        <div class="adad">
-                            <a href="#" class="default-btn1">SHOP NOW</a>
-                        </div>
-
-                    </div>
-                </div>
+                <?php } } ?>
             </div>
         </div>
     </section>
@@ -119,33 +71,36 @@
                 <p>Let these lovely "Mother's Day Picks" help to express your appreciation</p>
             </div>
             <div class="pick-flex">
-                <div class="pick-width">
-                    <div class="picks-img">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/picks1.png">
-                        <h3>Red Impala</h3>
-                        <p>From $269</p>
-                        <button class="default-btn1" type="button">SHOP NOW</button>
-                    </div>
+                <?php $args = array(
+                    'post_type'             => 'product',
+                    'post_status'           => 'publish',
+                    'ignore_sticky_posts'   => 1,
+                    'posts_per_page'        => '6',
+                    'tax_query'             => array(
+                        array(
+                            'taxonomy'      => 'product_cat',
+                            'field' => 'term_id',
+                            'terms'         => 15,
+                            'operator'      => 'IN'
+                        ),
+                    )
+                );
+                $products = new WP_Query($args);
+                while ( $products->have_posts() ) : $products->the_post(); global $product; ?>
+                    <div class="pick-width">
+                        <div class="picks-img">
+                            <?php if ( has_post_thumbnail() ) {
+                                the_post_thumbnail();
+                            } else { ?>
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/rep.jpeg">
+                            <?php } ?>
+                            <h3><?php the_title(); ?></h3>
+                            <p>From <?php echo $product->get_price_html(); ?></p>
+                            <a href="<?php the_permalink(); ?>" class="default-btn1" type="button">SHOP NOW</a>
+                        </div>
 
-                </div>
-                <div class="pick-width">
-                    <div class="picks-img">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/picks2.png">
-                        <h3>vintage and metallic copper</h3>
-                        <p>From $269</p>
-                        <button class="default-btn1" type="button">SHOP NOW</button>
                     </div>
-
-                </div>
-                <div class="pick-width">
-                    <div class="picks-img">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/picks3.png">
-                        <h3>Fuschia and Pink</h3>
-                        <p>From $190</p>
-                        <button class="default-btn1" type="button">SHOP NOW</button>
-                    </div>
-
-                </div>
+                <?php endwhile; wp_reset_postdata();  ?>
             </div>
             <div class="view-all">
                 <a href="#">View All Picks</a>
@@ -163,66 +118,66 @@
                                 <img src="<?php echo get_template_directory_uri(); ?>/images/Srars.png">
                                 <p><?php the_sub_field('customers_saying', 'option'); ?></p>
                                 <span><?php the_sub_field('customer_date', 'option'); ?><br>
-                                <?php the_sub_field('customer_name', 'option'); ?></span>
+                                    <?php the_sub_field('customer_name', 'option'); ?></span>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endwhile; else : endif; ?>
+                </div>
+            </div>
+        </section>
+        <div class="home-popup">
+            <div id="myModal22" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><img src="<?php echo get_template_directory_uri(); ?>/images/X.png"></button>
+                        <div class="popup-data">
+                            <div class="modal-header">
+
+                                <h1 class="modal-title">Want<br>
+                                15% Off ?</h1>
+                            </div>
+                            <div class="modal-body">
+                                <h3>Become a VIP and save
+                                on your firts order</h3>
+                                <form>
+                                    <div class="form-group">
+                                        <label>Email Address</label>
+                                        <input type="email" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Birthday</label>
+                                        <input type="date" class="form-control" placeholder="mm/dd/yyyy">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Anniversary</label>
+                                        <input type="date" class="form-control" placeholder="mm/dd/yyyy">
+                                    </div>
+                                    <p>Who will you give roses to?</p>
+                                    <div class="checkbox">
+                                        <label><input type="checkbox" value="">Spouse/Partner</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label><input type="checkbox" value="">Friends</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label><input type="checkbox" value="">Myself</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label><input type="checkbox" value="">Family</label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label><input type="checkbox" value="">Co-workers</label>
+                                    </div>
+                                    <div class="pop-btn">
+                                        <button type="submit" class="btn btn-primary">GO VIP</button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
-                <?php endwhile; else : endif; ?>
-            </div>
-        </div>
-    </section>
-    <div class="home-popup">
-        <div id="myModal22" class="modal fade">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><img src="<?php echo get_template_directory_uri(); ?>/images/X.png"></button>
-                    <div class="popup-data">
-                        <div class="modal-header">
-
-                            <h1 class="modal-title">Want<br>
-                            15% Off ?</h1>
-                        </div>
-                        <div class="modal-body">
-                            <h3>Become a VIP and save
-                            on your firts order</h3>
-                            <form>
-                                <div class="form-group">
-                                    <label>Email Address</label>
-                                    <input type="email" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <label>Birthday</label>
-                                    <input type="date" class="form-control" placeholder="mm/dd/yyyy">
-                                </div>
-                                <div class="form-group">
-                                    <label>Anniversary</label>
-                                    <input type="date" class="form-control" placeholder="mm/dd/yyyy">
-                                </div>
-                                <p>Who will you give roses to?</p>
-                                <div class="checkbox">
-                                    <label><input type="checkbox" value="">Spouse/Partner</label>
-                                </div>
-                                <div class="checkbox">
-                                    <label><input type="checkbox" value="">Friends</label>
-                                </div>
-                                <div class="checkbox">
-                                    <label><input type="checkbox" value="">Myself</label>
-                                </div>
-                                <div class="checkbox">
-                                    <label><input type="checkbox" value="">Family</label>
-                                </div>
-                                <div class="checkbox">
-                                    <label><input type="checkbox" value="">Co-workers</label>
-                                </div>
-                                <div class="pop-btn">
-                                    <button type="submit" class="btn btn-primary">GO VIP</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
                 </div>
-            </div>
-        </div> 
-    </div>
+            </div> 
+        </div>
 
-    <?php get_footer(); ?>
+        <?php get_footer(); ?>

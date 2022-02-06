@@ -1,12 +1,12 @@
 
 <section class="insta-home padding-main">
-    <div class="container">
-        <div class="iner-insta">
-            <img src="<?php echo get_template_directory_uri(); ?>/images/crown.png">
-            <h2>Shop Our Instagram</h2>
-            <p>@Ribaat ClothingOfficial</p>
-        </div>
-    </div>
+	<div class="container">
+		<div class="iner-insta">
+			<img src="<?php echo get_template_directory_uri(); ?>/images/crown.png">
+			<h2>Shop Our Instagram</h2>
+			<p>@Ribaat ClothingOfficial</p>
+		</div>
+	</div>
 </section>
 
 <footer class="main-footer">
@@ -17,13 +17,14 @@
 					<div class="in-aftr">
 						<p>Discover</p>
 						<div class="footer-na">
-							<ul>
-								<li><a href="#">Our Blog</a></li>
-								<li><a href="location.html">Store Locations</a></li>
-								<li><a href="gf-secret.html">Ribaat Clothing Expirience</a></li>
-								<li><a href="#">Shop Instagram</a></li>
-								<li><a href="faqs.html">FAQ</a></li>
-							</ul>
+							
+							<?php 
+							wp_nav_menu(array( 
+								'theme_location' => 'discover-menu', 
+                                // 'container_class' => 'navbar-nav' ,
+                                // 'menu_class' => 'navbar-nav'
+							));
+							?>
 						</div>
 					</div>
 				</div>
@@ -34,13 +35,14 @@
 					<div class="in-aftr">
 						<p>Customer Service</p>
 						<div class="footer-na">
-							<ul>
-								<li><a href="support.html">Support</a></li>
-								<li><a href="shipping-policy.html">Shipping Policy</a></li>
-								<li><a href="refund-policy.html">Refund Policy</a></li>
-								<li><a href="term-services.html">Terms of Service</a></li>
-								<li><a href="privacy-policy.html">Privacy Policy</a></li>
-							</ul>
+							
+							<?php 
+							wp_nav_menu(array( 
+								'theme_location' => 'customer-service', 
+                                // 'container_class' => 'navbar-nav' ,
+                                // 'menu_class' => 'navbar-nav'
+							));
+							?>
 						</div>
 					</div>
 				</div>
