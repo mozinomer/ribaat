@@ -105,29 +105,32 @@
                                 </ul>
                             </div>
                         </ul> -->
-                            <?php 
-                            wp_nav_menu(array( 
-                                'theme_location' => 'header-menu', 
+                        <?php 
+                        wp_nav_menu(array( 
+                            'theme_location' => 'header-menu', 
                                 // 'container_class' => 'navbar-nav' ,
-                                'menu_class' => 'navbar-nav'
-                            ));
-                            ?>
-                            <div class="mobile-li" id="mob-li">
-                                <ul>
-                                    <li><a href="support.html">Support</a></li>
-                                    <li><a href="shipping-policy.html">Shipping Policy</a></li>
-                                    <li><a href="refund-policy.html">Refund Policy</a></li>
-                                    <li><a href="term-services.html">Terms of Service</a></li>
-                                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                                </ul>
-                            </div>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
+                            'menu_class' => 'navbar-nav'
+                        ));
+                        ?>
+                        <div class="mobile-li" id="mob-li">
+                            <ul>
+                                <li><a href="support.html">Support</a></li>
+                                <li><a href="shipping-policy.html">Shipping Policy</a></li>
+                                <li><a href="refund-policy.html">Refund Policy</a></li>
+                                <li><a href="term-services.html">Terms of Service</a></li>
+                                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                    </ul>
+                </div>
+            </nav>
         </div>
-    </header>
-
+    </div>
+</header>
+<?php if(is_archive()) { ?>
+<?php } else { ?>
+    
     <section class="home-banner" id="home-bannrr">
         <img src="<?php echo the_field('top_banner'); ?>">
     </section>
+    <?php } ?>

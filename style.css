@@ -263,6 +263,7 @@ a.anchortextsubmenu {
 /* header hamburger css end */
 section#home-bannrr img {
     height: 400px;
+    object-fit: cover;
 }
 .mobile{
     display: none;
@@ -3820,4 +3821,76 @@ span.page-numbers.current {
 }
 .productContainershop {
     margin-bottom: 40px;
+}
+.productContainershop {
+    position: relative;
+}
+
+/*.ratingCountCustom {
+    position: absolute;
+    top: 8px;
+    right: 20px;
+    color: #fff;
+}*/
+.imageWrapperS img {
+    max-height: 400px;
+    height: 400px;
+    min-height: 400px;
+    object-fit: contain;
+}
+.pageNavigation {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex: 0 100%;
+    justify-content: center;
+    margin: 50px 0px 0px;
+}
+
+.pageNavigation a {
+    color: black;
+    float: left;
+    padding: 8px 19px !important;
+    text-decoration: none;
+    transition: background-color .3s;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+    border-radius: 50%;
+    margin: 0px 10px !important;
+}
+
+.pageNavigation span.pages {
+    display: none;
+}
+
+.wp-pagenavi span.current {
+    color: black;
+    float: left;
+    /* padding: 8px 19px; */
+    text-decoration: none;
+    transition: background-color .3s;
+    width: 40px !important;
+    height: 40px;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    color: #000;
+    border-radius: 50%;
+    margin: 0px 10px;
+    background-color: #cb9e2a;
+    color: white;
+    border-radius: 50%;
+    width: 42px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border-color: #cb9e2a !important;
+}
+.prodycSop {
+    padding: 100px 0px 0px;
 }
