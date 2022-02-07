@@ -4120,3 +4120,134 @@ a.checkout-button.button.alt.wc-forward:hover {
     background: #cb9e2a !important;
     color: #fff !important;
 }
+nav.woocommerce-MyAccount-navigation a {
+    display: block;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    font-size: 14px;
+    max-width: max-content;
+}
+
+body.woocommerce-account .woocommerce {
+    max-width: 1330px;
+    margin: 100px auto;
+}
+
+nav.woocommerce-MyAccount-navigation li.is-active a {
+    color: #cb9e2a;
+    border-bottom: 2px solid #cb9e2a;
+    font-weight: 600;
+}
+
+nav.woocommerce-MyAccount-navigation a:hover {
+    color: #cb9e2a;
+}
+.woocommerce .col2-set, .woocommerce-page .col2-set {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 100%;
+    margin: 0px -15px;
+    flex: 0 100%;
+}
+
+.woocommerce .col2-set .col-1, .woocommerce-page .col2-set .col-1 {
+    width: 100%;
+    float: none;
+    max-width: 100%;
+    flex: 0 50%;
+}
+
+.woocommerce .col2-set .col-2, .woocommerce-page .col2-set .col-2 {
+    width: 100%;
+    float: none;
+    max-width: 100%;
+    flex: 0 50%;
+}
+
+.woocommerce-account .woocommerce-MyAccount-content p {
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+.woocommerce-account .addresses .title .edit {
+    display: flex;
+    border: 2px solid #cb9e2a;
+    padding: 2px 30px;
+    font-size: 13px;
+    color: #cb9e2a;
+}
+
+.woocommerce-account .addresses .title .edit:hover {
+    background: #cb9e2a;
+    color: #fff;
+}
+
+header.woocommerce-Address-title.title {
+    margin-bottom: 20px;
+}
+
+address {
+    font-size: 14px;
+}
+form.woocommerce-EditAccountForm.edit-account input {
+    height: 40px;
+    padding: 0px 10px;
+    font-size: 13px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+form.woocommerce-EditAccountForm.edit-account label {
+    font-size: 14px;
+    font-weight: 600;
+    width: 100%;
+}
+
+form.woocommerce-EditAccountForm.edit-account legend {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 20px 0px 20px;
+    display: block;
+}
+form.woocommerce-form.woocommerce-form-login.login {
+    max-width: 600px;
+    margin: 50px auto;
+}
+
+form.woocommerce-form.woocommerce-form-login.login label {
+    font-weight: 600;
+    font-size: 14px;
+    width: 100%;
+}
+
+form.woocommerce-form.woocommerce-form-login.login input {
+    width: 100%;
+    height: 40px;
+    border: 1px solid #cb9e2a;
+    padding: 0px 10px;
+    font-size: 13px;
+}
+
+form.woocommerce-form.woocommerce-form-login.login input[type="checkbox"] {
+    width: auto;
+    height: auto;
+}
+
+p.woocommerce-form-row.woocommerce-form-row--wide.form-row.form-row-wide {
+    width: 100%;
+    max-width: 100%;
+    flex: 0 100%;
+}
+
+.woocommerce form .password-input, .woocommerce-page form .password-input {
+    width: 100%;
+}
+
+.woocommerce-account .woocommerce > h2 {
+    max-width: 600px;
+    margin: auto;
+}

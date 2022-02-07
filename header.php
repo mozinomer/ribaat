@@ -78,9 +78,9 @@
 
                     </div>
                     <div class="cart">
-                        <a href="account-blank-page.html" id="res-ac">Account</a>
-                        <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/icon.png"></a>
-                        <span class='badge badge-warning' id='lblCartCount'> 5 </span>
+                        <a href="<?php echo site_url(); ?>/my-account" id="res-ac">Account</a>
+                        <a href="<?php echo site_url(); ?>/cart"><img src="<?php echo get_template_directory_uri(); ?>/images/icon.png"></a>
+                        <span class='badge badge-warning' id='lblCartCount'> <?php echo WC()->cart->get_cart_contents_count(); ?></span>
                     </div>
 
                 </div>
