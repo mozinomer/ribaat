@@ -59,6 +59,25 @@ $(function () {
         $('.imageWrapperS').slick({
             slidesToShow: 1,
             arrow: true,
+        });
+        $('.sliderProductImages').slick({
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: true,
+          fade: true,
+          asNavFor: '.sliderProductImages1'
+      });
+        $('.sliderProductImages1').slick({
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          asNavFor: '.sliderProductImages',
+          dots: false,
+          arrows: false,
+          centerMode: false,
+          focusOnSelect: true
+      });
+        $('.sliderProductImages1 a, .sliderProductImages a').click( function(e) {
+            e.preventDefault();
         })
     });
 // Faqs Page JS //
@@ -89,7 +108,7 @@ $('.hide-card').click(function(){
 $('.expnd-btn').click(function(){
  $('.fleur-exper').slideDown();
  $(this).css({'visibility':'hidden' , 'transition': 'all .4s ease-in-out' , 'opacity': '0'});
- 
+
 
 });
 $('.reduce-btn').click(function(){
@@ -129,4 +148,3 @@ $('.containercontentWithHeading').click( function (e) {
     $(this).toggleClass('active');
     $(this).find('p').slideToggle();
 })
-

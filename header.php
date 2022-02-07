@@ -127,7 +127,7 @@
         </div>
     </div>
 </header>
-<?php if(is_archive()) { ?>
+<?php if(is_archive() || is_product()) { ?>
 <?php } else { ?>
     
     <section class="home-banner" id="home-bannrr">
