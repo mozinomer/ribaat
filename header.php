@@ -80,7 +80,10 @@
                     <div class="cart">
                         <a href="<?php echo site_url(); ?>/my-account" id="res-ac">Account</a>
                         <a href="<?php echo site_url(); ?>/cart"><img src="<?php echo get_template_directory_uri(); ?>/images/icon.png"></a>
-                        <span class='badge badge-warning' id='lblCartCount'> <?php echo WC()->cart->get_cart_contents_count(); ?></span>
+                        <span class='badge badge-warning' id='lblCartCount'> 
+                            <?php echo WC()->cart->get_cart_contents_count(); ?>
+                        </span>
+                        <?php //echo do_shortcode('[woo-minicart]'); ?>
                     </div>
 
                 </div>
@@ -127,9 +130,10 @@
         </div>
     </div>
 </header>
+
 <?php if(is_archive() || is_product()) { ?>
 <?php } else { ?>
-    
+
     <section class="home-banner" id="home-bannrr">
         <img src="<?php echo the_field('top_banner'); ?>">
     </section>
