@@ -297,7 +297,7 @@ nav.navbar.navbar-expand-lg {
     align-items: center;
     position: relative;
 }
-.cart {
+.top-header2 .cart {
     position: absolute;
     right: 5%;
     top: 50%;

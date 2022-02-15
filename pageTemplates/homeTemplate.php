@@ -9,6 +9,7 @@
                 <?php if( have_rows('home_first_column') ): while( have_rows('home_first_column') ) : the_row(); ?>
                     <div class="width-gift">
                         <div class="gift-img">
+							
                             <img src="<?php echo the_sub_field('icon_row_1'); ?>">
                             <h3><?php echo the_sub_field('heading_column'); ?></h3>
                         </div>
@@ -30,16 +31,20 @@
                         <div class="inner-shop">
                             <?php $catImage = get_field('image_cat', 'product_cat_'.$category->term_id); 
                             if($catImage) { ?>
-                                <img src="<?php the_field('image_cat', 'product_cat_'.$category->term_id); ?>">
+							
+                     <img src="<?php the_field('image_cat', 'product_cat_'.$category->term_id); ?>">
+						
                             <?php } else { ?>
+						
                                <img src="<?php echo get_template_directory_uri(); ?>/images/rep.jpeg">
+					
                            <?php } ?>
                            <div class="lock">
                             <img src="<?php echo get_template_directory_uri(); ?>/images/lock.png">
                         </div>
                         <h2><?php echo $category->name; ?></h2>
-                        <p> 
-                            <?php echo category_description($category->term_id); ?></p>
+                        
+                            <?php echo category_description($category->term_id); ?>
                             <span>From $99</span>
                             <div class="adad">
                                 <a href="<?php echo $term_link; ?>" class="default-btn1">SHOP NOW</a>
